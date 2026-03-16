@@ -23,28 +23,33 @@ visible_columns = [col for col in df.columns if col not in hidden_columns]
 
 layout = dbc.Container(
     [
-        html.H2("Page 1 - Tableau des ventes d'avocats", className="mb-4 mt-3"),
         html.Div(
             [
                 html.Div(
-                    dcc.Dropdown(
-                        id="region-dropdown",
-                        options=[{"label": region, "value": region} for region in region_options],
-                        value=region_options[0] if region_options else None,
-                        placeholder="Selectionner une region",
-                        clearable=False,
-                    ),
+                    [
+                        html.Label("Selectionner une region :", style={"marginBottom": "6px"}),
+                        dcc.Dropdown(
+                            id="region-dropdown",
+                            options=[{"label": region, "value": region} for region in region_options],
+                            value=region_options[0] if region_options else None,
+                            placeholder="Selectionner une region",
+                            clearable=False,
+                        ),
+                    ],
                     style={"flex": "1 1 300px", "minWidth": "240px"},
                 ),
                 html.Div(
-                    dcc.Dropdown(
-                        id="type-dropdown",
-                        options=[{"label": "Tous", "value": "__all__"}]
-                        + [{"label": avocado_type, "value": avocado_type} for avocado_type in type_options],
-                        value="__all__",
-                        placeholder="Selectionner un type",
-                        clearable=False,
-                    ),
+                    [
+                        html.Label("Selectionner un type :", style={"marginBottom": "6px"}),
+                        dcc.Dropdown(
+                            id="type-dropdown",
+                            options=[{"label": "Tous", "value": "__all__"}]
+                            + [{"label": avocado_type, "value": avocado_type} for avocado_type in type_options],
+                            value="__all__",
+                            placeholder="Selectionner un type",
+                            clearable=False,
+                        ),
+                    ],
                     style={"flex": "1 1 300px", "minWidth": "240px"},
                 ),
             ],
