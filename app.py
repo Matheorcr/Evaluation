@@ -1,7 +1,7 @@
 from dash import Dash
 import dash_bootstrap_components as dbc
 
-from pages.table_cb import register_callbacks
+from pages.compare_cb import register_compare_callbacks
 from pages.compare import layout as compare_layout
 
 #from pages.table import layout as table_layout
@@ -12,7 +12,7 @@ server = app.server
 
 # ...
 app.layout = compare_layout
-register_callbacks(app)
+register_compare_callbacks(app)
 
 
 if __name__ == "__main__":
