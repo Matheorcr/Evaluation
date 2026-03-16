@@ -1,0 +1,15 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Tooling and editor
+.DS_Store
+.vscode/
+
+# Build/distribution artifacts
+dist/
+build/
+*.egg-info/
